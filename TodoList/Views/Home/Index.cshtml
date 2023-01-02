@@ -1,0 +1,37 @@
+﻿@model tble_todo
+@{
+    ViewBag.Title = "Index";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TodoList</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+     </head>
+
+<body>
+            <div class="container">
+             
+                @using(Html.BeginForm("Index","Home",FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model =>model.Task,new {@class="col-md-2 hh" })
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model =>model.Task ,new {@class="form-control",placeholder="Please Enter task here" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <input type="submit" vlue="Add task" class="btn btn-primary sbmt" />
+                    </div>
+                    <div class="btnn">
+                        @Html.ActionLink("Check tasks", "ViewTask")
+                    </div>
+                   
+                </div>
+            }
+             
+</body>
+</html>
+
